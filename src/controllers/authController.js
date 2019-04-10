@@ -4,6 +4,9 @@ const User = require('../models/user');
 
 const router = express.Router();
 
+router.get('/register', (req, res)=>{
+    res.send("Only POST is Allowed.");
+});
 
 router.post('/register',async (req,res) =>{
     const { email } = req.body;
