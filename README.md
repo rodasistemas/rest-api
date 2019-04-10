@@ -1,2 +1,3 @@
-# rest-api
-REST API on NodeJS and MongoDB
+# REST API/NodeJS
+
+###REST API on NodeJS e MongoDB para autenticação de usuários
