@@ -1,6 +1,7 @@
 {
-    "service":"",
-    "user":"",
-    "pass":""
-
+    "service":"gmail",
+    "user":"danielc0ring4@gmail.com",
+    "clientId":"115345262797-egaokrj4vil5le7ilahagm9nqvch5181.apps.googleusercontent.com",
+    "clientSecret":"KAKZeGygHKOtgvKZIwGI_6Dk",
+    "refreshToken":"1/HcPR2Rrzu99SG_L-cr9SllVwwaZCg1N3zzTsotu2ccUmRmfNhfWfWfJECoanGI2g"
 }
