@@ -90,7 +90,7 @@ router.post('/reset-password', async(req, res)=>{
             return res.status(400).send({error: "Token Expired, try again"});
         user.password = password;
         await user.save();
-        return res.status(200).send({sucess: "Password altered success!"});
+        return res.status(200).send({sucess: "Password changed success!"});
     }catch(err){
         return res.status( 400 ).send({error:"Cannot reset password, try again."});
     }
