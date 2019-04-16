@@ -76,5 +76,23 @@ router.post('/forgot-password', async (req,res)=>{
         res.status(400).send({error:"Error on recovery password, try again"});
     }
 });
-
+router.post('/reset-password', async(req, res)=>{
+    const {email, token, password} = req.body;
+    try{
+        const user = await User.findOne({email})
+        .select('+passwordResetToken passwordResetExpires');
+        if(!user)
+            return res.status(400).send({error: "User not found!"});
+        if(token !== user.passwordResetToken)
+            return res.status(400).send({error: "Token Invalid, try again"});
+        const now = new Date();
+        if(now > user.passwordResetExpires)
+            return res.status(400).send({error: "Token Expired, try again"});
+        user.password = password;
+        await user.save();
+        return res.status(200).send({sucess: "Password altered success!"});
+    }catch(err){
+        return res.status( 400 ).send({error:"Cannot reset password, try again."});
+    }
+});
 module.exports = app => app.use('/auth', router);
